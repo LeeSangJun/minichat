@@ -17,7 +17,9 @@ def trigger():
 	  secret='280c237409fc6f0f3bc6'
 	)
 
-	p['test_channel'].trigger('my_event', {'message': 'hello world'})
+	input = request.args.get('input')
+	p['test_channel'].trigger('my_event', {'message': input})
+
 	return ""
 
 if __name__ == "__main__":
