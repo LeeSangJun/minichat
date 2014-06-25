@@ -4,6 +4,7 @@ import pusher
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def main():
 	return render_template('pusher_test.html')
