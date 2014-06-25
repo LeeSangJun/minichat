@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for, redirect,\
+from flask import Flask, request, url_for, redirect, session,\
      render_template, abort, g, flash
 import pusher
 
@@ -13,7 +13,12 @@ def main():
 def chat():
 	id = request.form['id']
 	pwd = request.form['pwd']
-	return render_template('pusher_test.html', id=id, pwd=pwd)
+	return render_template('pusher_test.html', id=id)
+
+@app.route("/login", methods=['POST'])
+def login():
+	return render_template('index.html')
+
 
 @app.route("/trigger")
 def trigger():
