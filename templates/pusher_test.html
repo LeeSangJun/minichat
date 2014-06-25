@@ -7,8 +7,9 @@
     <script type="text/javascript">
       // Enable pusher logging - don't include this in production
      $(document).ready(function(){
-        var pusher = new Pusher('c87201b48ba8607c7298');
+        var pusher = new Pusher('c87201b48ba8607c7298');  //initialize Pusher using app-key
         var channel = pusher.subscribe('test_channel');
+
             channel.bind('my_event', function(data) {
               $("#test").val(data.message);
          });

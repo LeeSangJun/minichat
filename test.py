@@ -9,6 +9,11 @@ def main():
 	return render_template('pusher_test.html')
 	
 
+@app.route("/login")
+def log_in():
+	"""log_in function"""
+
+	return render_template
 @app.route("/trigger")
 def trigger():
 	p = pusher.Pusher(
