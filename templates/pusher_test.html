@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>Pusher Test</title>
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="http://js.pusherapp.com/1.10/pusher.min.js"></script>
@@ -27,8 +28,11 @@
   </head>
   <body>
     <h1>chat_test</h1>
-    <input type="text" id = "chat_input"></input>
-    <button id="triggerBtn">보내기</button>
     <textarea id = "test"></textarea>
+    <form action="{{ url_for('trigger')}}">
+      <input readonly value="{{id}}">
+      <input type="text" id = "chat_input"></input>
+      <button id="triggerBtn">보내기</button>
+    </form>
   </body>
 </html>

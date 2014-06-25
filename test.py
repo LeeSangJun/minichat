@@ -1,13 +1,24 @@
-from flask import Flask, request, url_for, redirect,\
+from flask import Flask, request, url_for, redirect, session,\
      render_template, abort, g, flash
 import pusher
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def main():
-	return render_template('pusher_test.html')
-	
+	return render_template('index.html')
+
+@app.route("/chat", methods=['POST'])
+def chat():
+	id = request.form['id']
+	pwd = request.form['pwd']
+	return render_template('pusher_test.html', id=id)
+
+@app.route("/login", methods=['POST'])
+def login():
+	return render_template('index.html')
+
 
 @app.route("/login")
 def log_in():
