@@ -7,8 +7,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-	return render_template('pusher_test.html')
-	
+	return render_template('index.html')
+
+@app.route("/chat", methods=['POST'])
+def chat():
+	id = request.form['id']
+	pwd = request.form['pwd']
+	return render_template('pusher_test.html', id=id, pwd=pwd)
 
 @app.route("/trigger")
 def trigger():
