@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pusher Test</title>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://js.pusherapp.com/1.10/pusher.min.js"></script>
+    <script type="text/javascript">
+      // Enable pusher logging - don't include this in production
+     $(document).ready(function(){
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1>chat_test</h1>
+      <div>{{id}} 님 환영합니다.</div>
+      <div><a href = "/makeRoom">makeRoom</a></div>
+      <div>chat_list</div>
+      {% for room in rooms %}
+        <div><a href = "/joinChat?host={{room.host}}">{{room.host}}</a></div>
+      {% endfor %}
+    </form> 
+  </body>
+</html>
