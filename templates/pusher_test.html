@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pusher Test</title>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://js.pusherapp.com/1.10/pusher.min.js"></script>
+    <script type="text/javascript">
+      // Enable pusher logging - don't include this in production
+     $(document).ready(function(){
+        var pusher = new Pusher('c87201b48ba8607c7298');  //initialize Pusher using app-key
+        var channel = pusher.subscribe('test_channel');
+
+            channel.bind('my_event', function(data) {
+              $("#test").val(data.message);
+         });
+
+      $('#triggerBtn').click(function() {
+        var input = $("#chat_input").val();
+         $.get("/trigger",{
+            input:input
+            },
+            function(data){
+            });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>chat_test</h1>
+    <textarea id = "test"></textarea>
+    <form action="{{ url_for('trigger')}}">
+      <input readonly value="{{id}}">
+      <input type="text" id = "chat_input"></input>
+      <button id="triggerBtn">보내기</button>
+    </form>
+  </body>
+</html>
