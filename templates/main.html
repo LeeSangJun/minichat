@@ -2,24 +2,60 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pusher Test</title>
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="http://js.pusherapp.com/1.10/pusher.min.js"></script>
     <script type="text/javascript">
+
       // Enable pusher logging - don't include this in production
      $(document).ready(function(){
       });
     </script>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/signin.css" rel="stylesheet">
+    <style>
+    html {
+      position: relative;
+      min-height: 100%;
+    }
+    body {
+      margin-bottom: 60px;
+    }
+
+    .container {
+      width: auto;
+      max-width: 680px;
+      padding: 0 15px;
+    }
+    .container .text-muted {
+      margin: 20px 0;
+    }
+
+    </style>
   </head>
 
   <body>
-    <h1>chat_test</h1>
-      <div>{{id}} 님 환영합니다.</div>
-      <div><a href = "/makeRoom">makeRoom</a></div>
-      <div>chat_list</div>
-      {% for room in rooms %}
-        <div><a href = "/joinChat?host={{room.host}}">{{room.host}}</a></div>
-      {% endfor %}
-    </form> 
+  <div class="container">
+    <div class="page-header">
+      <h1>Chat_Test</h1>
+    </div>
+    <p class="lead">Welcome {{id}} <a class="btn btn-default" href="/makeRoom" role="button">MakeRoom</a></p>
+    <div><h2>Chat_List</h2></div>
+    <div class="row">
+    {% for room in rooms %}
+      <div class="col-lg-4">
+        <h3>{{room.host}}</h3>
+        <p><a class="btn btn-default" href="/joinChat?host={{room.host}}" role="button">{{room.host}}</a></p>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

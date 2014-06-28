@@ -2,10 +2,12 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pusher Test</title>
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="http://js.pusherapp.com/1.10/pusher.min.js"></script>
     <script type="text/javascript">
+
       // Enable pusher logging - don't include this in production
       // check Log_in AND get_userID
       
@@ -40,15 +42,51 @@
       });
 
     </script>
+
+    <style>
+    html {
+      position: relative;
+      min-height: 100%;
+    }
+    body {
+      margin-bottom: 60px;
+    }
+
+    .container {
+      width: auto;
+      max-width: 500px;
+      padding: 0 15px;
+    }
+    .container .text-muted {
+      margin: 20px 0;
+    }
+
+    </style>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/signin.css" rel="stylesheet">
   </head>
 
   <body>
-    <h1>chat_test</h1>
+
+    <div class="container">
+      <h1>Chat_Test 
+      <button class="btn btn-default" type="button" id="out">Out</button></h1>
       <input type = "hidden" id = "hostname" value = "{{host}}"></input>
-      <div id = "chat_window"></div>
-      <!--입력 input-->
-      <input type="text" id = "chat_input"></input>
-      <button id="sendMsg">보내기</button>
-      <button id="out">방나가기</button>
+      <div class="alert alert-info" id = "chat_window"></div>
+      <div class="input-group">
+        <input type="text" class="form-control" id = "chat_input">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" id="sendMsg">Send</button>
+        </span>
+      </div>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script
   </body>
 </html>

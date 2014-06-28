@@ -2,14 +2,28 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>로그인</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/signin.css" rel="stylesheet">
+
 	</head>
 	<body>
-		<form action="/login" method="post">
-			id : <input type="text" name="id">
-			pwd : <input type="password" name="pwd">
-			<input type="submit" value = "로그인">
-		</form>
 
+		<div class="container">
+
+			<form action="/login" method="post" class="form-signin">
+				<h2 class="form-signin-heading">Log In</h2>
+				<input type="text" class="form-control" placeholder="ID" required="" autofocus=""name="id">
+				<input type="password" class="form-control" placeholder="Password" required="" name="pwd">
+				<button class="btn btn-lg btn-default btn-block" type="submit">Log In</button>
+			</form>
+		</div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
 	</body>
 </html>
